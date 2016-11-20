@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/identity-inbound-provisioning-scim.iml" filepath="$PROJECT_DIR$/identity-inbound-provisioning-scim.iml" />
+      <module fileurl="file://$PROJECT_DIR$/components/org.wso2.carbon.identity.scim.common/org.wso2.carbon.identity.scim.common.iml" filepath="$PROJECT_DIR$/components/org.wso2.carbon.identity.scim.common/org.wso2.carbon.identity.scim.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/features/org.wso2.carbon.identity.scim.common.feature/org.wso2.carbon.identity.scim.common.feature.iml" filepath="$PROJECT_DIR$/features/org.wso2.carbon.identity.scim.common.feature/org.wso2.carbon.identity.scim.common.feature.iml" />
+      <module fileurl="file://$PROJECT_DIR$/components/org.wso2.carbon.identity.scim.provider/org.wso2.carbon.identity.scim.provider.iml" filepath="$PROJECT_DIR$/components/org.wso2.carbon.identity.scim.provider/org.wso2.carbon.identity.scim.provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/features/org.wso2.carbon.identity.scim.provider.feature/org.wso2.carbon.identity.scim.provider.feature.iml" filepath="$PROJECT_DIR$/features/org.wso2.carbon.identity.scim.provider.feature/org.wso2.carbon.identity.scim.provider.feature.iml" />
+    </modules>
+  </component>
+</project>
