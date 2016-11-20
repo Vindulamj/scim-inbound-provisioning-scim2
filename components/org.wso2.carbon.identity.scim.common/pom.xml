@@ -50,14 +50,9 @@
             <systemPath>/home/vindula/Desktop/carbon-identity-mgt/components/org.wso2.carbon.identity.mgt/target/org.wso2.carbon.identity.mgt-1.0.0-SNAPSHOT.jar</systemPath>
         </dependency>
         <dependency>
-            <groupId>commons-collections.wso2</groupId>
+            <groupId>commons-collections</groupId>
             <artifactId>commons-collections</artifactId>
-            <version>3.2.0.wso2v1</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.2</version>
+            <version>3.2.1</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.osgi</groupId>
@@ -121,33 +116,6 @@
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.17</version>
-                <executions>
-                    <execution>
-                        <id>validate</id>
-                        <phase>validate</phase>
-                        <configuration>
-                            <configLocation>
-                                https://raw.githubusercontent.com/wso2/code-quality-tools/master/checkstyle/checkstyle.xml
-                            </configLocation>
-                            <suppressionsLocation>
-                                https://raw.githubusercontent.com/wso2/code-quality-tools/master/checkstyle/suppressions.xml
-                            </suppressionsLocation>
-                            <encoding>UTF-8</encoding>
-                            <consoleOutput>true</consoleOutput>
-                            <failsOnError>true</failsOnError>
-                            <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                        </configuration>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-
             </plugin>
         </plugins>
     </build>

@@ -57,7 +57,7 @@ public class SCIMUserManager implements UserManager {
 
             UserModel userModel = getUserModelFromClaims(claimsMap);
 
-            identityStore.addUser(userModel);
+            identityStore.addUser(userModel,userStoreUser.getDomain().getDomainName());
 
             log.info("User: " + user.getUserName() + " is created through SCIM.");
 
