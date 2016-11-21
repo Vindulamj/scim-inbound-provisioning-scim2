@@ -37,12 +37,10 @@ import java.util.*;
 public class SCIMUserManager implements UserManager {
     private static Log log = LogFactory.getLog(SCIMUserManager.class);
 
-    private org.wso2.carbon.identity.mgt.bean.User userStoreUser = null;
     IdentityStore identityStore = null;
 
-    public SCIMUserManager(org.wso2.carbon.identity.mgt.bean.User user, IdentityStore identityStore) {
-       this.userStoreUser = user;
-       this.identityStore = identityStore;
+    public SCIMUserManager(IdentityStore identityStore) {
+        this.identityStore = identityStore;
     }
 
     @Override
@@ -57,7 +55,8 @@ public class SCIMUserManager implements UserManager {
 
             UserModel userModel = getUserModelFromClaims(claimsMap);
 
-            identityStore.addUser(userModel,userStoreUser.getDomain().getDomainName());
+            //TODO : get the domain of the user store and call that method instead of this method.
+            identityStore.addUser(userModel);
 
             log.info("User: " + user.getUserName() + " is created through SCIM.");
 

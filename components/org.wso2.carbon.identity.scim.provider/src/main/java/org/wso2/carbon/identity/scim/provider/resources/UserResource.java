@@ -36,7 +36,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 
-@Api(value = "scim/v2/t/{domain}/Users")
+@Api(value = "scim/v2/Users")
 @SwaggerDefinition(
         info = @Info(
                 title = "/Users Endpoint Swagger Definition", version = "1.0",
@@ -48,7 +48,7 @@ import javax.ws.rs.core.Response;
                         url =  "http://wso2.com"
                 ))
 )
-@Path("/scim/v2/t/{domain}/Users")
+@Path("/scim/v2/Users")
 public class UserResource extends AbstractResource {
 
     @GET
@@ -63,9 +63,7 @@ public class UserResource extends AbstractResource {
             @ApiResponse(code = 204, message = "Valid user is found"),
             @ApiResponse(code = 404, message = "Valid user is not found")})
 
-    public Response getUser(@ApiParam(value = SCIMProviderConstants.DOMAIN_DESC)
-                            @PathParam(SCIMProviderConstants.DOMAIN) String domain,
-                            @ApiParam(value = SCIMProviderConstants.ID_DESC, required = true)
+    public Response getUser(@ApiParam(value = SCIMProviderConstants.ID_DESC, required = true)
                             @PathParam(SCIMProviderConstants.ID) String id,
                             @ApiParam(value = SCIMProviderConstants.ACCEPT_HEADER_DESC, required = true)
                             @HeaderParam(SCIMProviderConstants.ACCEPT_HEADER) String outputFormat,
@@ -74,7 +72,7 @@ public class UserResource extends AbstractResource {
                             @ApiParam(value = SCIMProviderConstants.EXCLUDED_ATTRIBUTES_DESC, required = false)
                             @QueryParam(SCIMProviderConstants.EXCLUDE_ATTRIBUTES) String  excludedAttributes) {
 
-        SCIMResponse scimResponse = new SCIMResponse(200, "Hello : "+ domain, null);
+        SCIMResponse scimResponse = new SCIMResponse(200, "Hello : wso2" , null);
         return SupportUtils.buildResponse(scimResponse);
     }
 
@@ -86,9 +84,7 @@ public class UserResource extends AbstractResource {
             @ApiResponse(code = 201, message = "Valid user is created"),
             @ApiResponse(code = 404, message = "User is not found")})
 
-    public Response createUser(@ApiParam(value = SCIMProviderConstants.DOMAIN_DESC)
-                               @PathParam(SCIMProviderConstants.DOMAIN) String domain,
-                               @ApiParam(value = SCIMProviderConstants.CONTENT_TYPE_HEADER_DESC, required = true)
+    public Response createUser(@ApiParam(value = SCIMProviderConstants.CONTENT_TYPE_HEADER_DESC, required = true)
                                @HeaderParam(SCIMProviderConstants.CONTENT_TYPE) String inputFormat,
                                @ApiParam(value = SCIMProviderConstants.ACCEPT_HEADER_DESC, required = true)
                                @HeaderParam(SCIMProviderConstants.ACCEPT_HEADER) String outputFormat,
@@ -124,7 +120,7 @@ public class UserResource extends AbstractResource {
             encoder = identitySCIMManager.getEncoder();
 
             // obtain the user store manager
-            UserManager userManager = IdentitySCIMManager.getInstance().getUserManager(domain);
+            UserManager userManager = IdentitySCIMManager.getInstance().getUserManager();
 
             // create charon-SCIM user endpoint and hand-over the request.
             UserResourceManager userResourceManager = new UserResourceManager();
@@ -151,9 +147,7 @@ public class UserResource extends AbstractResource {
             @ApiResponse(code = 204, message = "User is deleted"),
             @ApiResponse(code = 404, message = "Valid user is not found")})
 
-    public Response deleteUser(@ApiParam(value = SCIMProviderConstants.DOMAIN_DESC)
-                               @PathParam(SCIMProviderConstants.DOMAIN) String domain,
-                               @ApiParam(value = SCIMProviderConstants.ID_DESC, required = true)
+    public Response deleteUser(@ApiParam(value = SCIMProviderConstants.ID_DESC, required = true)
                                @PathParam(SCIMProviderConstants.ID) String id,
                                @ApiParam(value = SCIMProviderConstants.ACCEPT_HEADER_DESC, required = true)
                                @HeaderParam(SCIMProviderConstants.ACCEPT_HEADER) String format) {
@@ -173,7 +167,7 @@ public class UserResource extends AbstractResource {
             encoder = identitySCIMManager.getEncoder();
 
             // obtain the user store manager
-            UserManager userManager = IdentitySCIMManager.getInstance().getUserManager(domain);
+            UserManager userManager = IdentitySCIMManager.getInstance().getUserManager();
 
             // create charon-SCIM user resource manager and hand-over the request.
             UserResourceManager userResourceManager = new UserResourceManager();
@@ -200,9 +194,7 @@ public class UserResource extends AbstractResource {
             @ApiResponse(code = 200, message = "Valid users are found"),
             @ApiResponse(code = 404, message = "Valid users are not found")})
 
-    public Response getUser(@ApiParam(value = SCIMProviderConstants.DOMAIN_DESC)
-                            @PathParam(SCIMProviderConstants.DOMAIN) String domain,
-                            @ApiParam(value = SCIMProviderConstants.ACCEPT_HEADER_DESC, required = true)
+    public Response getUser(@ApiParam(value = SCIMProviderConstants.ACCEPT_HEADER_DESC, required = true)
                             @HeaderParam(SCIMProviderConstants.ACCEPT_HEADER) String format,
                             @ApiParam(value = SCIMProviderConstants.ATTRIBUTES_DESC, required = false)
                             @QueryParam (SCIMProviderConstants.ATTRIBUTES) String attribute,
@@ -234,7 +226,7 @@ public class UserResource extends AbstractResource {
             encoder = identitySCIMManager.getEncoder();
 
             // obtain the user store manager
-            UserManager userManager = IdentitySCIMManager.getInstance().getUserManager(domain);
+            UserManager userManager = IdentitySCIMManager.getInstance().getUserManager();
 
             // create charon-SCIM user resource manager and hand-over the request.
             UserResourceManager userResourceManager = new UserResourceManager();
@@ -264,9 +256,7 @@ public class UserResource extends AbstractResource {
             @ApiResponse(code = 200, message = "Valid users are found"),
             @ApiResponse(code = 404, message = "Valid users are not found")})
 
-    public Response getUsersByPost(@ApiParam(value = SCIMProviderConstants.DOMAIN_DESC)
-                                   @PathParam(SCIMProviderConstants.DOMAIN) String domain,
-                                   @ApiParam(value = SCIMProviderConstants.CONTENT_TYPE_HEADER_DESC, required = true)
+    public Response getUsersByPost(@ApiParam(value = SCIMProviderConstants.CONTENT_TYPE_HEADER_DESC, required = true)
                                    @HeaderParam(SCIMProviderConstants.CONTENT_TYPE) String inputFormat,
                                    @ApiParam(value = SCIMProviderConstants.ACCEPT_HEADER_DESC, required = true)
                                    @HeaderParam(SCIMProviderConstants.ACCEPT_HEADER) String outputFormat,
@@ -295,7 +285,7 @@ public class UserResource extends AbstractResource {
             encoder = identitySCIMManager.getEncoder();
 
             // obtain the user store manager
-            UserManager userManager = IdentitySCIMManager.getInstance().getUserManager(domain);
+            UserManager userManager = IdentitySCIMManager.getInstance().getUserManager();
 
             // create charon-SCIM user resource manager and hand-over the request.
             UserResourceManager userResourceManager = new UserResourceManager();
@@ -325,9 +315,7 @@ public class UserResource extends AbstractResource {
             @ApiResponse(code = 200, message = "User is updated"),
             @ApiResponse(code = 404, message = "Valid user is not found")})
 
-    public Response updateUser(@ApiParam(value = SCIMProviderConstants.DOMAIN_DESC)
-                               @PathParam(SCIMProviderConstants.DOMAIN) String domain,
-                               @ApiParam(value = SCIMProviderConstants.ID_DESC, required = true)
+    public Response updateUser(@ApiParam(value = SCIMProviderConstants.ID_DESC, required = true)
                                @PathParam(SCIMProviderConstants.ID) String id,
                                @ApiParam(value = SCIMProviderConstants.CONTENT_TYPE_HEADER_DESC, required = true)
                                @HeaderParam(SCIMProviderConstants.CONTENT_TYPE) String inputFormat,
@@ -363,7 +351,7 @@ public class UserResource extends AbstractResource {
             encoder = identitySCIMManager.getEncoder();
 
             // obtain the user store manager
-            UserManager userManager = IdentitySCIMManager.getInstance().getUserManager(domain);
+            UserManager userManager = IdentitySCIMManager.getInstance().getUserManager();
 
             // create charon-SCIM user endpoint and hand-over the request.
             UserResourceManager userResourceEndpoint = new UserResourceManager();

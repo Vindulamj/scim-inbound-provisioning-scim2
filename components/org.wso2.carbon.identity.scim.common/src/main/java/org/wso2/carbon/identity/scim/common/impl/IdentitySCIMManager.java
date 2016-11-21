@@ -96,26 +96,16 @@ public class IdentitySCIMManager {
     }
 
 
-    public UserManager getUserManager(String userName) throws CharonException {
+    public UserManager getUserManager() throws CharonException {
         SCIMUserManager scimUserManager = null;
-        try {
-            RealmService realmService = (RealmService) IdentitySCIMDataHolder.getInstance().getRealmService();
-            if (realmService != null) {
-                scimUserManager = new SCIMUserManager(realmService.getIdentityStore().getUser(userName),
-                        realmService.getIdentityStore());
-                return scimUserManager;
-            } else {
-                String error = "Can not obtain carbon realm service..";
-                throw new CharonException(error);
-            }
-        } catch (IdentityStoreException e) {
-            String error = "Identity Store exception occurred.";
-            throw new CharonException(error,e);
-        } catch (UserNotFoundException e) {
-            String error = "No such user store user exist.";
-            throw new CharonException(error,e);
+        RealmService realmService = (RealmService) IdentitySCIMDataHolder.getInstance().getRealmService();
+        if (realmService != null) {
+            scimUserManager = new SCIMUserManager(realmService.getIdentityStore());
+            return scimUserManager;
+        } else {
+            String error = "Can not obtain carbon realm service..";
+            throw new CharonException(error);
         }
-
     }
 
 
