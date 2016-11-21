@@ -21,7 +21,7 @@
         <groupId>org.wso2.carbon.identity</groupId>
         <artifactId>identity-inbound-provisioning-scim</artifactId>
         <relativePath>../../pom.xml</relativePath>
-        <version>5.1.5</version>
+        <version>5.1.2</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -111,7 +111,8 @@
 
                         </Import-Package>
                         <Export-Package>
-                            !org.wso2.carbon.identity.scim.common.internal
+                            !org.wso2.carbon.identity.scim.common.internal,
+                            org.wso2.carbon.identity.scim.common.impl,
                         </Export-Package>
                         <DynamicImport-Package>*</DynamicImport-Package>
                     </instructions>
