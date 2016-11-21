@@ -20,15 +20,21 @@ package org.wso2.carbon.identity.scim.common.impl;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.wso2.carbon.identity.core.util.IdentityUtil;
 import org.wso2.carbon.identity.mgt.claim.Claim;
+import org.wso2.carbon.identity.mgt.exception.ClaimManagerException;
 import org.wso2.carbon.identity.mgt.exception.IdentityStoreException;
+import org.wso2.carbon.identity.mgt.exception.UserNotFoundException;
 import org.wso2.carbon.identity.mgt.model.UserModel;
 import org.wso2.carbon.identity.mgt.store.IdentityStore;
 import org.wso2.carbon.identity.scim.common.utils.AttributeMapper;
+import org.wso2.carbon.identity.scim.common.utils.SCIMCommonUtils;
+import org.wso2.carbon.user.core.UserCoreConstants;
 import org.wso2.charon.core.v2.exceptions.*;
 import org.wso2.charon.core.v2.extensions.UserManager;
 import org.wso2.charon.core.v2.objects.Group;
 import org.wso2.charon.core.v2.objects.User;
+import org.wso2.charon.core.v2.schema.SCIMConstants;
 import org.wso2.charon.core.v2.utils.codeutils.Node;
 import org.wso2.charon.core.v2.utils.codeutils.SearchRequest;
 
@@ -74,8 +80,30 @@ public class SCIMUserManager implements UserManager {
     }
 
     @Override
-    public void deleteUser(String s) throws NotFoundException, CharonException, NotImplementedException, BadRequestException {
+    public void deleteUser(String userId) throws NotFoundException, CharonException, NotImplementedException, BadRequestException {
+        if (log.isDebugEnabled()) {
+            log.debug("Deleting user: " + userId);
+        }
+        String userName = null;
+        try {
+            org.wso2.carbon.identity.mgt.bean.User existingUser = identityStore.getUser(userId);
 
+            List<String> claimList = new ArrayList<>();
+
+            claimList.add("urn:ietf:params:scim:schemas:core:2.0:User:userName");
+
+            List<Claim> userNames = existingUser.getClaims(claimList);
+
+            //we assume (since id is unique per user) only one user exists for a given id
+            userName = userNames.get(0).getValue();
+
+            identityStore.deleteUser(userName);
+
+            log.info("User: " + userName + " is deleted through SCIM.");
+
+        } catch (UserNotFoundException | ClaimManagerException | IdentityStoreException e) {
+            throw new NotFoundException("No matching user with the name: " + userName);
+        }
     }
 
     @Override
