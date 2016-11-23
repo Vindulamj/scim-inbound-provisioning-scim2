@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.wso2.eclipse.equinox:org.eclipse.equinox.ds:1.4.200.v20131126-2331">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wso2/eclipse/equinox/org.eclipse.equinox.ds/1.4.200.v20131126-2331/org.eclipse.equinox.ds-1.4.200.v20131126-2331.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wso2/eclipse/equinox/org.eclipse.equinox.ds/1.4.200.v20131126-2331/org.eclipse.equinox.ds-1.4.200.v20131126-2331-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/wso2/eclipse/equinox/org.eclipse.equinox.ds/1.4.200.v20131126-2331/org.eclipse.equinox.ds-1.4.200.v20131126-2331-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
