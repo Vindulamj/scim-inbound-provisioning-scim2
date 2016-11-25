@@ -20,6 +20,7 @@ package org.wso2.carbon.identity.scim.provider.resources;
 
 import io.swagger.annotations.*;
 
+import org.wso2.carbon.context.CarbonContext;
 import org.wso2.carbon.identity.scim.common.impl.IdentitySCIMManager;
 import org.wso2.carbon.identity.scim.provider.util.SCIMProviderConstants;
 import org.wso2.carbon.identity.scim.provider.util.SupportUtils;
@@ -72,8 +73,33 @@ public class UserResource extends AbstractResource {
                             @ApiParam(value = SCIMProviderConstants.EXCLUDED_ATTRIBUTES_DESC, required = false)
                             @QueryParam(SCIMProviderConstants.EXCLUDE_ATTRIBUTES) String  excludedAttributes) {
 
-        SCIMResponse scimResponse = new SCIMResponse(200, "Hello : wso2" , null);
-        return SupportUtils.buildResponse(scimResponse);
+        JSONEncoder encoder = null;
+        try {
+            IdentitySCIMManager identitySCIMManager = IdentitySCIMManager.getInstance();
+
+            if(!isValidOutputFormat(outputFormat)){
+                String error = outputFormat + " is not supported.";
+                throw  new FormatNotSupportedException(error);
+            }
+            // obtain the encoder at this layer in case exceptions needs to be encoded.
+            encoder = identitySCIMManager.getEncoder();
+
+            // obtain the user store manager
+            UserManager userManager = IdentitySCIMManager.getInstance().getUserManager();
+
+            // create charon-SCIM user endpoint and hand-over the request.
+            UserResourceManager userResourceManager = new UserResourceManager();
+
+            SCIMResponse scimResponse = userResourceManager.get(id, userManager,attribute, excludedAttributes);
+            // needs to check the code of the response and return 200 0k or other error codes
+            // appropriately.
+            return new SupportUtils().buildResponse(scimResponse);
+
+        } catch (CharonException e) {
+            return handleCharonException(e,encoder);
+        } catch (FormatNotSupportedException e) {
+            return handleFormatNotSupportedException(e);
+        }
     }
 
 

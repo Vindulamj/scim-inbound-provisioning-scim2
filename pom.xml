@@ -127,6 +127,7 @@
 
         <module>features/org.wso2.carbon.identity.scim.common.feature</module>
         <module>features/org.wso2.carbon.identity.scim.provider.feature</module>
+        <module>tests/distribution</module>
     </modules>
 
     <properties>

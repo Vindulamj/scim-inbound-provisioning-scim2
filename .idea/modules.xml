@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/features/org.wso2.carbon.identity.scim.common.feature/org.wso2.carbon.identity.scim.common.feature.iml" filepath="$PROJECT_DIR$/features/org.wso2.carbon.identity.scim.common.feature/org.wso2.carbon.identity.scim.common.feature.iml" />
       <module fileurl="file://$PROJECT_DIR$/components/org.wso2.carbon.identity.scim.provider/org.wso2.carbon.identity.scim.provider.iml" filepath="$PROJECT_DIR$/components/org.wso2.carbon.identity.scim.provider/org.wso2.carbon.identity.scim.provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/features/org.wso2.carbon.identity.scim.provider.feature/org.wso2.carbon.identity.scim.provider.feature.iml" filepath="$PROJECT_DIR$/features/org.wso2.carbon.identity.scim.provider.feature/org.wso2.carbon.identity.scim.provider.feature.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tests/distribution/org.wso2.carbon.identity.test.distribution.iml" filepath="$PROJECT_DIR$/tests/distribution/org.wso2.carbon.identity.test.distribution.iml" />
     </modules>
   </component>
 </project>

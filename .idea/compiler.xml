@@ -32,6 +32,7 @@
       <module name="org.wso2.carbon.identity.scim.common.feature" target="1.7" />
       <module name="org.wso2.carbon.identity.scim.provider" target="1.8" />
       <module name="org.wso2.carbon.identity.scim.provider.feature" target="1.7" />
+      <module name="org.wso2.carbon.identity.test.distribution" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

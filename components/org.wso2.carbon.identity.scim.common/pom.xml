@@ -36,20 +36,6 @@
             <version>4.11</version>
         </dependency>
         <dependency>
-            <groupId>Charon</groupId>
-            <artifactId>org.charon</artifactId>
-            <version>3.0.0</version>
-            <scope>system</scope>
-            <systemPath>/home/vindula/Desktop/Charon-3.0/modules/charon-core/target/org.wso2.charon.core.v2-3.0.0.jar</systemPath>
-        </dependency>
-        <dependency>
-            <groupId>wso2.user.core</groupId>
-            <artifactId>org.user.core</artifactId>
-            <version>1.0.0</version>
-            <scope>system</scope>
-            <systemPath>/home/vindula/Desktop/carbon-identity-mgt/components/org.wso2.carbon.identity.mgt/target/org.wso2.carbon.identity.mgt-1.0.0-SNAPSHOT.jar</systemPath>
-        </dependency>
-        <dependency>
             <groupId>commons-collections</groupId>
             <artifactId>commons-collections</artifactId>
             <version>3.2.1</version>
@@ -68,6 +54,20 @@
             <groupId>org.wso2.carbon.identity.framework</groupId>
             <artifactId>org.wso2.carbon.identity.core</artifactId>
             <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>Charon</groupId>
+            <artifactId>org.charon</artifactId>
+            <version>3.0.0</version>
+            <scope>system</scope>
+            <systemPath>/home/vindula/Desktop/ishsra_charon/Charon-3.0/modules/charon-core/target/org.wso2.charon.core.v2-3.0.0.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>wso2.user.core</groupId>
+            <artifactId>org.user.core</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>/home/vindula/Desktop/carbon-identity-mgt/components/org.wso2.carbon.identity.mgt/target/org.wso2.carbon.identity.mgt-1.0.3-SNAPSHOT.jar</systemPath>
         </dependency>
     </dependencies>
 

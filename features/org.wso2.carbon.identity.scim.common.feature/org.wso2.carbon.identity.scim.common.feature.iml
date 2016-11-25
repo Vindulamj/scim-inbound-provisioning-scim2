@@ -9,6 +9,41 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.wso2.carbon.identity.inbound.provisioning.scim:org.wso2.carbon.identity.scim.common:5.1.2" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon:org.wso2.carbon.user.core:4.4.7" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon:javax.cache.wso2:4.4.7" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon:org.wso2.carbon.user.api:4.4.7" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon:org.wso2.carbon.logging:4.4.7" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon:org.wso2.carbon.bootstrap:4.4.7" level="project" />
+    <orderEntry type="library" name="Maven: commons-lang:commons-lang:1.0" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon:org.wso2.carbon.core:4.4.7" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.orbit.com.hazelcast:hazelcast:3.5.4.wso2v2" level="project" />
+    <orderEntry type="library" name="Maven: com.hazelcast:hazelcast-all:3.5.4" level="project" />
+    <orderEntry type="library" name="Maven: org.eclipse.equinox:org.eclipse.equinox.http.helper:1.1.0.wso2v1" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.orbit.org.bouncycastle:bcprov-jdk15on:1.52.0.wso2v1" level="project" />
+    <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.52" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon:org.wso2.carbon.registry.core:4.4.7" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon:org.wso2.carbon.registry.xboot:4.4.7" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents.wso2:httpcore:4.3.3.wso2v1" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-catalina-ha:7.0.69" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-juli:7.0.69" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-tribes:7.0.69" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-catalina:7.0.69" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-annotations-api:7.0.69" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-api:7.0.69" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.tomcat:tomcat-util:7.0.69" level="project" />
+    <orderEntry type="library" name="Maven: wsdl4j.wso2:wsdl4j:1.6.2.wso2v4" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon:org.wso2.carbon.utils:4.4.7" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon:org.wso2.carbon.queuing:4.4.7" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon:org.wso2.carbon.base:4.4.7" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon:org.wso2.carbon.securevault:4.4.7" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.orbit.commons-fileupload:commons-fileupload:1.3.1.wso2v1" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon:org.wso2.carbon.registry.api:4.4.7" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon.identity.framework:org.wso2.carbon.identity.core:5.5.0" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon.identity.framework:org.wso2.carbon.identity.base:5.5.0" level="project" />
+    <orderEntry type="library" name="Maven: commons-fileupload:commons-fileupload:1.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.ws.rs:jsr311-api:1.1.1" level="project" />
+    <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.1" level="project" />
+    <orderEntry type="library" name="Maven: org.wso2.carbon.identity.inbound.provisioning.scim:org.wso2.carbon.identity.scim.common:5.1.2" level="project" />
     <orderEntry type="library" name="Maven: commons-collections.wso2:commons-collections:3.2.0.wso2v1" level="project" />
     <orderEntry type="library" name="Maven: org.wso2.carbon:org.wso2.carbon.user.core:4.4.7" level="project" />
     <orderEntry type="library" name="Maven: org.wso2.carbon:javax.cache.wso2:4.4.7" level="project" />
